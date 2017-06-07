@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 
-class RegistrationsController extends Controller
+class RegistrationController extends Controller
 {
     public function create()
     {
@@ -20,11 +20,17 @@ class RegistrationsController extends Controller
 
             'email' => 'required|email',
 
-            'password' => 'required'
+            'password' => 'required|confirmed|min:4'
         ]);
 
         //Create and save the user.
-        $user = User::create(request(['name', 'email', 'password']));
+       $user = User::create([ 
+
+            'name' => request('name'),
+            'email' => request('email'),
+            'password' => bcrypt(request('password'))
+
+            ]);
 
         //Sign them in.
 
@@ -35,3 +41,4 @@ class RegistrationsController extends Controller
         return redirect('/');
     }
 }
+
