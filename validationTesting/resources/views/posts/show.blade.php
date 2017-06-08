@@ -38,21 +38,29 @@
 <div class="card">
     
     <div class="card-block">
-       
+       @if(Auth::check())
+
         <form method="POST" action="/posts/{{$post->id}}/comments">
             {{ csrf_field() }}
             <div class="form-group">
                 <textarea name="body" placeholder="Write your comment here:" required></textarea>
             </div>
 
+
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Add comment</button>
             </div>
-
+        
         </form>
 
     @include('layouts.errors')
-    
+
+    @else
+
+    You have to be logged in to write a comment.
+
+    @endif
+
     </div>
 
 </div>

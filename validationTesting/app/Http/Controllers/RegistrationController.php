@@ -8,7 +8,7 @@ class RegistrationController extends Controller
 {
     public function create()
     {
-        return view('session.create');
+        return view('registration.registration');
     }
     
     public function store()
@@ -18,7 +18,7 @@ class RegistrationController extends Controller
             
             'name'=> 'required',
 
-            'email' => 'required|email',
+            'email' => 'required|unique:users|email',
 
             'password' => 'required|confirmed|min:4'
         ]);

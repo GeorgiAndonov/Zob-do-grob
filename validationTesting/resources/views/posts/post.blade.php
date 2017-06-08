@@ -7,7 +7,9 @@
 
             <p class="blog-post-meta">
 
-               Created at: {{$post->created_at->toFormattedDateString()}} 
+               Created at: {{$post->created_at->toFormattedDateString()}}
+
+               By {{$post->user->name}}
 
             </p>
 
