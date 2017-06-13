@@ -11,4 +11,6 @@
 |
 */
 
-Route::get('/', 'RegistrationController@create');
+Route::get('/', function () {
+    return view('welcome');
+});
