@@ -1,0 +1,1 @@
+Try to fix exepnion error: Access denied in Connection.php

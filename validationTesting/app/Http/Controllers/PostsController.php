@@ -14,29 +14,11 @@ class PostsController extends Controller
 
     public function index()
     {
-        $posts = Post::latest();
+        $posts = Post::latest()
+        ->filter(request(['month', 'year']))
+        ->get();
 
-        if($month = request('month'))
-        {
-            $posts->whereMonth('created_at', Carbon::parse($month)->month);
-        }
-
-        if($year = request('year'))
-        {
-            $posts->whereYear('created_at', $year);
-        }
-
-        $posts = $posts->get();
-
-        $archives = Post::selectRaw('year(created_at) as year, monthname(created_at) as month, count(*) as published')
-        ->groupBy('year', 'month')
-        ->orderByRaw('min(created_at) desc')
-        ->get()
-        ->toArray();
-
-        //Use query scope next time
-
-        return view('posts.index', compact('posts', 'archives'));
+        return view('posts.index', compact('posts'));
     }
     
      public function create()
@@ -69,6 +51,8 @@ class PostsController extends Controller
         new Post(request(['title', 'body']))
 
     );
+
+    session()->flash('message', 'Your post has been successfully created.');
 
     return redirect('/'); 
 

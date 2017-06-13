@@ -1,0 +1,7 @@
+GET /blog
+GET /blog/create
+POST /blog
+GET /blog/{id}/edit
+GET /blog/{id}
+PATCH /blog/{id}
+DELETE /blog/{id}

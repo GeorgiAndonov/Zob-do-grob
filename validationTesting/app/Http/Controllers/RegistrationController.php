@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Mail\WelcomeNew;
+use App\Http\Requests\RegistrationForm;
 
 class RegistrationController extends Controller
 {
@@ -11,17 +13,8 @@ class RegistrationController extends Controller
         return view('registration.registration');
     }
     
-    public function store()
+    public function store(RegistrationForm $register)
     {
-        //Validate the information
-        $this->validate(request(), [
-            
-            'name'=> 'required',
-
-            'email' => 'required|unique:users|email',
-
-            'password' => 'required|confirmed|min:4'
-        ]);
 
         //Create and save the user.
        $user = User::create([ 
@@ -36,7 +29,11 @@ class RegistrationController extends Controller
 
         auth()->login($user);
 
+        \Mail::to($user)->send( new WelcomeNew($user) );
+
         //Redirect to home page.
+
+        session()->flash('message', 'Thanks for registering!');
 
         return redirect('/');
     }
