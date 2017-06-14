@@ -10,7 +10,7 @@ class RegistrationController extends Controller
 {
     public function create()
     {
-        return view('home');
+        return view('signInUp');
     }
     
     public function store(RegistrationForm $register)
@@ -33,9 +33,9 @@ class RegistrationController extends Controller
 
         //Redirect to home page.
 
-        session()->flash('message', 'Thanks for registering!');
+        // session()->flash('message', 'Thanks for registering!');
 
-        return redirect('/');
+        return redirect('/home');
     }
 }
 

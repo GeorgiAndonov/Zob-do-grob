@@ -1,0 +1,31 @@
+.navbar-left {
+    width: 60%;
+    float:left;
+}
+
+.button {
+    display: inline-block;
+
+}
+
+.navbar-right {
+    width: 20%;
+    float:right;
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+a:active {
+    color: black;
+    text-decoration: none;
+}
