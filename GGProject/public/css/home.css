@@ -1,0 +1,15 @@
+body{
+	color: white;
+	background: url("/pics/bg.jpg") no-repeat;
+	font: 'Open Sans',sans-serif;
+}
+
+.home-logo {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+.home-logo-img {
+    width: 10%;
+}
