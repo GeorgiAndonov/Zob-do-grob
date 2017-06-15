@@ -12,10 +12,6 @@ class SessionsController extends Controller
         $this->middleware('guest', ['except' => 'logout']);
     }
 
-    public function create()
-    {
-        return view('signInUp');
-    }
 
     public function logout()
     {
@@ -26,9 +22,15 @@ class SessionsController extends Controller
 
     public function store()
     {
-        if ( auth()->attempt(request(['email', 'password'])))
+        if ( !auth()->attempt(request(['email', 'password'])))
         {
-            return redirect('/home');
+            return back()->withErrors([
+
+                'message' => 'Please check your credentials before login in '
+
+            ]);
         }
+
+        return redirect('/home');
     }
 }

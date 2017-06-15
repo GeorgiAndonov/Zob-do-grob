@@ -1,9 +1,9 @@
 <?php
 
 
-Route::get('/', 'RegistrationController@create');
+Route::get('/', 'LoginRegisterController@create');
 
-Route::post('/', 'RegistrationController@store');
+Route::post('/register', 'RegistrationController@store');
 
 Route::get('/home', 'HomeController@index');
 
@@ -23,11 +23,8 @@ Route::get('/home', 'HomeController@index');
 
 // Route::get('/', 'SessionsController@create')->name('login');
 
-Route::post('/', 'SessionsController@store');
+Route::post('/login', 'SessionsController@store');
 
 Route::get('/logout', 'SessionsController@logout');
 
-Route::get('/navbar', function(){
-    return view('layouts.navbar');
-});
 

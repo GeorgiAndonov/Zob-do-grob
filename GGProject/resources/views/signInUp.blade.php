@@ -8,6 +8,7 @@
         <link href="css/singInUp.css" rel="stylesheet">
         <link href="css/registration.css" rel="stylesheet">
         <link href="css/reset.css" rel="stylesheet">
+
     </head>
     <body class="body">
     <div class="home-logo">
@@ -16,6 +17,7 @@
         </a>
     </div>
     @include('registrationForm')
+    @include('layouts.errors')
     </body>
 </html>
 

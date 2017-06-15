@@ -14,7 +14,6 @@
     <body>
     <div class="inner-content">
     @include('layouts.navbar')
-
     </div>
     </body>
 </html>
