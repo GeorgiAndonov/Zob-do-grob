@@ -14,6 +14,16 @@
     <body>
     <div class="inner-content">
     @include('layouts.navbar')
+    
+    @if($flash = session('message'))
+
+        <div id="flash-message" role="alert">
+            
+                {{$flash}}
+
+        </div>
+      
+    @endif
     </div>
     </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 
 
-Route::get('/', 'LoginRegisterController@create');
+Route::get('/', 'LoginRegisterController@create')->name('login');
 
 Route::post('/register', 'RegistrationController@store');
 
@@ -20,8 +20,6 @@ Route::get('/home', 'HomeController@index');
 // Route::get('/register', 'RegistrationController@create');
 
 // Route::post('/register', 'RegistrationController@store');
-
-// Route::get('/', 'SessionsController@create')->name('login');
 
 Route::post('/login', 'SessionsController@store');
 
