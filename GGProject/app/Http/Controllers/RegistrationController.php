@@ -33,7 +33,7 @@ class RegistrationController extends Controller
 
         //Redirect to home page.
 
-        // session()->flash('message', 'Thanks for registering!');
+        //session()->flash('message', 'Thanks for registering!');
 
         return redirect('/home');
     }

@@ -7,10 +7,6 @@ Route::post('/', 'RegistrationController@store');
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/navbar', function(){
-    return view('layouts.navbar');
-});
-
 // Route::get('/posts/create', 'PostsController@create');
 
 // Route::post('/posts', 'PostsController@store');
@@ -25,8 +21,13 @@ Route::get('/navbar', function(){
 
 // Route::post('/register', 'RegistrationController@store');
 
-// Route::get('/login', 'SessionsController@create')->name('login');
+// Route::get('/', 'SessionsController@create')->name('login');
 
-// Route::post('/login', 'SessionsController@store');
+Route::post('/', 'SessionsController@store');
 
-// Route::get('/logout', 'SessionsController@logout');
+Route::get('/logout', 'SessionsController@logout');
+
+Route::get('/navbar', function(){
+    return view('layouts.navbar');
+});
+

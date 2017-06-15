@@ -10,7 +10,11 @@
         <link href="css/reset.css" rel="stylesheet">
     </head>
     <body class="body">
-    <div class="home-logo"><a href='/'><img class="home-logo-img" src='pics/logo.png'></a></div>
+    <div class="home-logo">
+        <a href='/'>
+            <img class="home-logo-img" src='pics/logo.png'>
+        </a>
+    </div>
     @include('registrationForm')
     </body>
 </html>

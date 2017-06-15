@@ -18,7 +18,7 @@
 
 <div class="button"><a href='#' > <i class="fa fa-user-circle-o" aria-hidden="true"></i></a></div>
 
-<div class="button"><a href='#' > LOG OUT </a></div>
+<div class="button"><a href='/logout' > LOG OUT </a></div>
 
 </div>
 
