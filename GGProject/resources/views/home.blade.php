@@ -8,12 +8,25 @@
         <link href="css/home.css" rel="stylesheet">
         <link href="css/navbar.css" rel="stylesheet">
         <link href="css/reset.css" rel="stylesheet">
+        <link href="css/homepage.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     </head>
     <body>
     <div class="inner-content">
     @include('layouts.navbar')
+
+    @include('layouts.homepage')
+
+    @if($flash = session('message'))
+
+        <div id="flash-message" role="alert">
+            
+                {{$flash}}
+
+        </div>
+      
+    @endif
     </div>
     </body>
 </html>

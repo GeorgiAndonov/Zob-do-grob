@@ -1,7 +1,7 @@
 <?php
 
 
-Route::get('/', 'LoginRegisterController@create');
+Route::get('/', 'LoginRegisterController@create')->name('login');
 
 Route::post('/register', 'RegistrationController@store');
 
@@ -21,10 +21,11 @@ Route::get('/home', 'HomeController@index');
 
 // Route::post('/register', 'RegistrationController@store');
 
-// Route::get('/', 'SessionsController@create')->name('login');
-
 Route::post('/login', 'SessionsController@store');
 
 Route::get('/logout', 'SessionsController@logout');
 
 
+Route::get('/posts', function(){
+    return view('layouts.posts');
+});
