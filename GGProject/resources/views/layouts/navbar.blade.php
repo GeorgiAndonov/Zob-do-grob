@@ -2,7 +2,7 @@
 
 <div class="navbar-left">
 
-<div class="button"><a href='/' > HOME </a></div>
+<div class="button"><a href='/home' > HOME </a></div>
 
 <div class="button"><a href='#' > ALL POSTS </a></div>
 
@@ -22,4 +22,4 @@
 
 </div>
 
-<nav>
+</nav>

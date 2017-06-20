@@ -3,15 +3,17 @@
     float:left;
 }
 
-.button {
+.navbar-left button {
     display: inline-block;
-
+    width: 
 }
 
 .navbar-right {
     width: 20%;
     float:right;
 }
+
+
 
 a:link {
     color: black;
