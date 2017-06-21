@@ -25,6 +25,18 @@ Route::post('/login', 'SessionsController@store');
 
 Route::get('/logout', 'SessionsController@logout');
 
+Route::prefix('admin')->group(function() 
+{
+
+    Route::get('/login', 'AdminController@showLoginForm')->name('admin.login');
+
+    Route::post('/login', 'AdminController@login');
+
+    Route::get('/', 'AdminLoggedController@index');
+
+    Route::get('/logout', 'AdminLoggedController@logout');
+
+});
 
 Route::get('/posts', function(){
     return view('layouts.posts');
